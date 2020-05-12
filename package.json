@@ -1,0 +1,99 @@
+{
+  "name": "farmacia",
+  "description": "aplicacion de administracion",
+  "version": "0.8.0",
+  "private": true,
+  "author": {
+    "name": "ang95",
+    "email": "german.apaza.n@gmail.com",
+    "url": "https://github.com/ANG95"
+  },
+  "homepage": "./",
+  "main": "public/electron.js",
+  "scripts": {
+    "start": "rescripts start",
+    "build": "rescripts build",
+    "test": "rescripts test",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "yarn build",
+    "electron-pack": "yarn build -mw",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.ang.apaza",
+    "asar": true,
+    "productName": "BOTICA VIRGEN DEL ROSARIO",
+    "copyright": "Copyright © ${ang95} - 2020",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/favicon.ico"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "electron-pdf-window": "^1.0.12",
+    "frameless-titlebar": "^1.0.8",
+    "mousetrap": "^1.6.5",
+    "pdfmake": "^0.1.65",
+    "react-dom": "^16.13.0",
+    "react-icons": "^3.9.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.0",
+    "react-select": "^3.1.0",
+    "reactstrap": "^8.4.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.13",
+    "@rescripts/rescript-env": "^0.0.11",
+    "concurrently": "^5.1.0",
+    "cross-env": "^7.0.2",
+    "electron": "9.0.0-beta.7",
+    "electron-builder": "^22.4.0",
+    "react-toastify": "^5.5.0",
+    "recharts": "^1.8.5",
+    "typescript": "^3.8.3",
+    "electron-is-dev": "^1.1.0",
+    "react": "^16.13.0",
+    "wait-on": "^4.0.1"
+  }
+}

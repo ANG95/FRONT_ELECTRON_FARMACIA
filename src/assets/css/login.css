@@ -1,0 +1,11 @@
+ .fondoLogin{
+   background-image: url("../img/fondoLogin.jpg");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+ .cardLogin{
+   background: #1b4656fa;
+   width: 301px;
+   box-shadow: 1px 1px 8px #0c2d36;
+ }
