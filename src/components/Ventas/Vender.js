@@ -69,7 +69,7 @@ class Vender extends Component {
             if (this._isMounted) {
                 this.setState({ DataProductosAPI: row.data })
             }
-            console.log("row productos", row.data);
+            // console.log("row productos", row.data);
         } catch (error) {
             console.error("errores en obtener los productos");
         }
@@ -595,7 +595,7 @@ class Vender extends Component {
 
                     </style>
                         <div class="printer-content">
-                            <div style="text-align: center; font-size: 18px; font-weight: bold;">BOTICA VIRGEN DEL ROSARIO</div>
+                            <div style="text-align: center; font-size: 18px; font-weight: bold;">BOTICA DEL ROSARIO</div>
                             <div style="text-align: center; font-size: 7px;">RUC 10704526160 AV.SIMON BOLIVAR N°345 - PUNO</div>
                             <div style="font-size: 12px;  text-align: center; font-weight: bold;">TICKET DE VENTA N° ${insertaBoleta.data.id_venta}</div>
                             <div style="font-size: 10px; text-align: center;"><b>FECHA Y HORA: </b> ${insertaBoleta.data.fecha_venta}</div>
@@ -715,9 +715,9 @@ class Vender extends Component {
             "detalles": DataSeleccionados
 
         })
-        console.log("insertaBoleta ", insertaBoleta);
+        // console.log("insertaBoleta ", insertaBoleta);
         if (insertaBoleta.status === 200) {
-            toast.success('✔ Venta realizada con éxito', {
+            toast.success(`✔ Venta N° ${insertaBoleta.data.id_venta} realizada con éxito`, {
                 position: "top-right",
                 autoClose: 1500
             })

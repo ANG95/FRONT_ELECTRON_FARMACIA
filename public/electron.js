@@ -13,6 +13,7 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
+    show: false,
     titleBarStyle: 'hidden',
     frame: false, // esconde el titulo o header en  donde estan los botones para minimizar maximizar y cerrar
     backgroundColor: '#2e2c29',
@@ -52,6 +53,9 @@ function createWindow() {
 }
 
 app.on('ready', createWindow);
+app.once('ready-to-show', () => {
+  app.show()
+})
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

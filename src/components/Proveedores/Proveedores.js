@@ -39,10 +39,10 @@ class Proveedores extends Component {
         // } catch (error) {
         //     console.error("errores EN OBTENER LOS PROVEEDORES");
         // }
-        this.reqProductos(this.state.limit, this.state.CantidadRows)
+        this.reqProveedores(this.state.limit, this.state.CantidadRows)
     }
 
-    reqProductos = async (limit, CantidadRows) => {
+    reqProveedores = async (limit, CantidadRows) => {
         try {
             var row = await Axios.post(`/proveedores`, { limit, CantidadRows })
             this.setState({ DataProveedoresAPI: row.data })

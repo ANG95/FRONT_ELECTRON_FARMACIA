@@ -143,13 +143,13 @@ class PrivateRoutes extends Component {
 				usuario: roles.usuario
 			});
 		} else {
-			this.props.history.push('/');
+			history.push('/');
 		}
 	}
 
-	cierraSesion = () => {
+	cierraSesion =  async() => {
 		if (window.confirm('¿Esta seguro de salir del sistema?')) {
-			localStorage.removeItem('_userD');
+			await localStorage.removeItem('_userD');
 			history.push('/');
 		}
 	}
@@ -182,7 +182,7 @@ class PrivateRoutes extends Component {
 			<Fragment>
 				<nav>
 					<TitleBar
-						icon={"https://i0.pngocean.com/files/110/184/993/veneration-of-mary-in-the-catholic-church-child-jesus-queen-of-heaven-icon-mary-thumb.jpg"}
+						icon={"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQerURiUv2CaFOHL1U52ToInzSSzCOMsI8YiD_L1XlQKlICJcaT&usqp=CAU"}
 						app="BOTICA VIRGEN DEL ROSARIO"
 						menu={slackTemplate}
 						theme={{

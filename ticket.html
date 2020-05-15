@@ -1,124 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
 
-                  <!DOCTYPE html>
-                    <html lang="en">
-                    <head>
-                      <meta charset="UTF-8">
-                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                      <script src="./JsBarcode.all.min.js"></script>
-                      <title>Ticket de venta</title>
-                    </head>
-                    <body>
-                    <style type="text/css">
-                    .printer-content {
-                      position: absolute;
-                      left: 0;
-                      top: 0;
-                      width: 58mm;
-                      min-width: 58mm;
-                      max-width: 58mm;
-                      font-family: courier!important;
-                      font-weight:bold;
-                    }
-                    @media print {
-                        @page {
-                          size: 58mm auto portrait;
-                          margin: 0px 33px auto 16px;
-                        }
-                  
-                        #printer-content {
-                          position: absolute;
-                          left: 0;
-                          top: 0;
-                          width: 58mm;
-                          min-width: 58mm;
-                          max-width: 58mm;
-                          font-family: Courier New,Courier!important;
-                        }
-                  
-                        table,
-                        td,
-                        th {
-                          border: 1px solid #e7e7e7;
-                          font-size: 9px;
-                          padding: 1px;
-                        }
-                  
-                        table {
-                          border-collapse: collapse;
-                          width: 100%;
-                        }
-                  
-                        th {
-                          text-align: center;
-                        }
-                  
-                        .txtCenter {
-                          text-align: center;
-                        }
-                  
-                        .txtRight {
-                          text-align: right;
-                        }
-                        .esconder{
-                            font-size: 9px;
-                            text-align: center;
-                        }
-                    }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./JsBarcode.all.min.js"></script>
+  <title>TICKET DE VENTA N° 000005</title>
+</head>
 
-                    </style>
-                        <div class="printer-content">
-                            <div style="text-align: center; font-size: 18px; font-weight: bold;">BOTICA VIRGEN DEL ROSARIO</div>
-                            <div style="text-align: center; font-size: 7px;">RUC 10704526160 AV.SIMON BOLIVAR N°345 - PUNO</div>
-                            <div style="font-size: 12px;  text-align: center; font-weight: bold;">TICKET DE VENTA N° 000144</div>
-                            <div style="font-size: 10px; text-align: center;"><b>FECHA Y HORA: </b> 04-05-2020 10:22:00</div>
-                            <div class="esconder"><b>Sr(a): </b>  otros</div>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>CANT.</th>
-                                        <th>DESCRIPCION</th>
-                                        <th>P.U.</th>
-                                        <th>IMPORTE</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                                <td class="txtCenter"> 1 </td>
-                                                <td> JABON LIQUIDO null null </td>
-                                                <td class="txtRight"> 28 </td>
-                                                <td class="txtRight"> 28.00 </td>
-                                            </tr>
-                                    <tr>
-                                        <td colspan="3" class="txtRight">SUBTOTAL S/.</td>
-                                        <td class="txtRight">28.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" class="txtRight">DESCUENTO S/.</td>
-                                        <td class="txtRight">0.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" class="txtRight">IMPORTE A PAGAR S/.</td>
-                                        <td class="txtRight">28.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        
-                        <div style="text-align: center; display: flex; height: 100%;align-items: center;">
-                            <svg id="barcode"></svg>    
-                            <div>
-                                <div style="font-size: 7px; text-align: center;">No se aceptan devoluciones</div>
-                                <div style="font-size: 9px; text-align: center;">Gracias por su compra</div>
-                            </div>
-                        </div>
+<body>
+  <style type="text/css">
+    .printer-content {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 58mm;
+      min-width: 58mm;
+      max-width: 58mm;
+      font-family: courier !important;
+      font-weight: bold;
+    }
 
-                        <script>
-                            JsBarcode("#barcode", "000144",  {
-                                format: "code128",
-                                displayValue: false,
-                                height: 30,
-                                width: 2
-                            });
-                        </script>
-                      </div>
-                    </body>
-                </html>
+    @media print {
+      @page {
+        size: 58mm auto portrait;
+        margin: 0px 33px auto 16px;
+      }
+
+      #printer-content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 58mm;
+        min-width: 58mm;
+        max-width: 58mm;
+        font-family: Courier New, Courier !important;
+      }
+
+      table,
+      td,
+      th {
+        border: 1px solid #e7e7e7;
+        font-size: 9px;
+        padding: 1px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th {
+        text-align: center;
+      }
+
+      .txtCenter {
+        text-align: center;
+      }
+
+      .txtRight {
+        text-align: right;
+      }
+
+      .esconder {
+        font-size: 9px;
+        text-align: center;
+      }
+    }
+  </style>
+  <div class="printer-content">
+    <div style="text-align: center; font-size: 18px; font-weight: bold;">BOTICA VIRGEN DEL ROSARIO</div>
+    <div style="text-align: center; font-size: 7px;">RUC 10704526160 AV.SIMON BOLIVAR N°345 - PUNO</div>
+    <div style="font-size: 12px;  text-align: center; font-weight: bold;">TICKET DE VENTA N° 000005</div>
+    <div style="font-size: 10px; text-align: center;"><b>FECHA Y HORA: </b> 25-02-2020 01:09:26</div>
+    <div class="esconder"><b>Sr(a): </b>PALLARES CAMISAL DOKI</div>
+    <table>
+      <thead>
+        <tr>
+          <th>CANT.</th>
+          <th>DESCRIPCION</th>
+          <th>P.U.</th>
+          <th>IMPORTE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="txtCenter"> 1 </td>
+          <td> BARRA BARRA</td>
+          <td class="txtRight"> 10 </td>
+          <td class="txtRight"> 10 </td>
+        </tr>
+        <tr>
+          <td class="txtCenter"> 1 </td>
+          <td> BARRA BARRA</td>
+          <td class="txtRight"> 20 </td>
+          <td class="txtRight"> 20 </td>
+        </tr>
+        <tr>
+          <td class="txtCenter"> 1 </td>
+          <td> BARRA BARRA</td>
+          <td class="txtRight"> 11 </td>
+          <td class="txtRight"> 11 </td>
+        </tr>
+        <tr>
+          <td class="txtCenter"> 1 </td>
+          <td> BARRA BARRA</td>
+          <td class="txtRight"> 45 </td>
+          <td class="txtRight"> 45 </td>
+        </tr>
+        <tr>
+          <td colspan="3" class="txtRight">SUBTOTAL S/.</td>
+          <td class="txtRight">86.00</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="txtRight">DESCUENTO S/.</td>
+          <td class="txtRight">0</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="txtRight">IMPORTE A PAGAR S/.</td>
+          <td class="txtRight">86</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="text-align: center; display: flex; height: 100%;align-items: center;">
+      <svg id="barcode"></svg>
+      <div>
+        <div style="font-size: 7px; text-align: center;">No se aceptan devoluciones</div>
+        <div style="font-size: 9px; text-align: center;">Gracias por su compra</div>
+      </div>
+    </div>
+
+    <script>
+      JsBarcode("#barcode", "000005", {
+        format: "code128",
+        displayValue: false,
+        height: 30,
+        width: 2
+      });
+    </script>
+  </div>
+</body>
+
+</html>

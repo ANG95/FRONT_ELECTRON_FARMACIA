@@ -156,7 +156,7 @@ class ReportesVentas extends Component {
             var ObjetosReportes = {
                 content: [
                     {
-                        text: 'BOTICA VIRGEN DEL ROSARIO ',
+                        text: 'BOTICA DEL ROSARIO ',
                         style: 'header'
 
                     },

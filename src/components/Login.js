@@ -5,7 +5,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import "../assets/css/login.css"
 import history from '../util/history';
 import { ApiURL, setAuthToken } from '../config/ApiUrl'
-import SisWiseAppLogo from "../assets/img/SisWiseAppLogo.png"
 
 class Login extends Component {
 	state = {
@@ -39,7 +38,7 @@ class Login extends Component {
 			}
 
 		} catch (error) {
-			console.error("error en el login ", error)
+			console.error("error en login ", error)
 			toast.error('Errores al tratar de ingresar al sistema ' + error, {
 				position: "top-right",
 				autoClose: 2500
@@ -67,9 +66,8 @@ class Login extends Component {
 					pauseOnHover
 				/>
 				<div className="card p-4 cardLogin p-5">
-					<img src={SisWiseAppLogo} width="85px" alt="SisWise Logo" className="rounded mx-auto d-block" />
-					<h6 className="text-center text-white"> BOTICA VIRGEN DEL ROSARIO  </h6>
-					<br />
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQerURiUv2CaFOHL1U52ToInzSSzCOMsI8YiD_L1XlQKlICJcaT&usqp=CAU" width="85px"  height="85px" alt="SisWise Logo" className="rounded-circle mx-auto d-block" />
+					<h6 className="mt-2 text-center text-white"> BOTICA DEL ROSARIO  </h6>
 					<p className="h6 text-center text-white">Iniciar sesión</p>
 					<Form className="text-white">
 						<FormGroup row>

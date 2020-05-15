@@ -20,8 +20,8 @@ class ChartVentasMes extends Component {
 
     SeleccionaAnio = async (anio) => {
         try {
-            var ventasAnio = await Axios.post(`/ventas/poranio`, { "anio": anio })
             if (this._isMounted) {
+                var ventasAnio = await Axios.post(`/ventas/poranio`, { "anio": anio })
                 this.setState({ DataVentasAnioAPI: ventasAnio.data })
             }
             // console.log("ventas del añio 2020", ventasAnio.data)
@@ -44,7 +44,7 @@ class ChartVentasMes extends Component {
                         </select>
                     </div>
                 </div>
-                <div className="card-body p-1 table-responsive" style={{ height: "calc(72vh)" }}>
+                <div className="card-body p-1 table-responsive" style={{ height: "calc(70vh)" }}>
                     <ResponsiveContainer width='100%' aspect={3.0 / 2.7}>
                         <BarChart
                             // width={555}

@@ -2,62 +2,8 @@ import React, { Component, Fragment } from 'react';
 
 class ResumenVentas extends Component {
     state = {
-        Data: [
-            {
-                nombre: "german",
-                edad: 29,
-                ciudad: "Ilave"
-            },
-            {
-                nombre: "alex",
-                edad: 59,
-                ciudad: "Juli"
-            },
-            {
-                nombre: "lucas",
-                edad: 63,
-                ciudad: "Puno"
-            },
-            {
-                nombre: "mary",
-                edad: 16,
-                ciudad: "Ilave"
-            },
-            {
-                nombre: "Miriam",
-                edad: 13,
-                ciudad: "Juliaca"
-            },
-            {
-                nombre: "Nicola",
-                edad: 32,
-                ciudad: "Juliaca"
-            },
-            {
-                nombre: "Zoe",
-                edad: 6,
-                ciudad: "Ilave"
-            }
-        ],
-        input: ""
     }
     render() {
-        var { Data, input } = this.state
-        var Claves = Object.keys(Data[0])
-
-        if (input.length > 0) {
-            Data = Data.filter(d => {
-                Claves = Claves.filter(e => {
-                    d = (d[e] || "").toString()
-                    console.log("d[e] ", d);
-                    return d.match(input)
-                })
-                // console.log("claver", Claves);
-                return d
-            })
-            // console.log("data", Data);   
-            // console.log("data>", input);
-        }
         return (
             <Fragment>
                 <div className="font-weight-bold mb-2 px-3 shadow-sm p-2 bg-light">RESUMEN DE VENTAS REALIZADAS</div>
@@ -71,7 +17,7 @@ class ResumenVentas extends Component {
                                 <p className="card-text">de 50 ventas</p>
                             </div>
                             <div className="card-footer">
-                                <small className="text-muted">Total de ventas realizadas hasta hoy</small>
+                                <small className="text-muted">* Total de ventas realizadas hasta hoy</small>
                             </div>
                         </div>
                         <div className="card">
@@ -81,7 +27,7 @@ class ResumenVentas extends Component {
                                 <p className="card-text"> de un total de 50 ventas</p>
                             </div>
                             <div className="card-footer">
-                                <small className="text-muted">Descuentos realizados por venta</small>
+                                <small className="text-muted">* Descuentos realizados por venta</small>
                             </div>
                         </div>
                         {/* <div className="card">
