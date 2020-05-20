@@ -2,13 +2,15 @@ import React, { PureComponent } from 'react'
 import { Row, Col } from 'reactstrap'
 import ChartVentasMes from './ChartVentasMes'
 import Axios from 'axios'
+import ProductosAlerta from './ProductosAlerta'
 
 class Inicio extends PureComponent {
 
     state = {
         DataTotalProveedoresAPI: 0,
         VentasdescuentosAPI: {},
-        masvendidoAPI: []
+        masvendidoAPI: [],
+        activeTab: '1',
     }
     componentDidMount = () => {
         this.reqProveedores()
@@ -30,7 +32,7 @@ class Inicio extends PureComponent {
         try {
             var ventas = await Axios.get(`/ventas/ventasdescuentos`)
             this.setState({ VentasdescuentosAPI: ventas.data })
-            console.log("VentasdescuentosAPI >", ventas.data);
+            // console.log("VentasdescuentosAPI >", ventas.data);
         } catch (error) {
             console.error("errores EN OBTENER VentasdescuentosAPI");
         }
@@ -39,7 +41,7 @@ class Inicio extends PureComponent {
         try {
             var masvendido = await Axios.get(`/productos/masvendido`)
             this.setState({ masvendidoAPI: masvendido.data })
-            console.log("masvendido >", masvendido.data);
+            // console.log("masvendido >", masvendido.data);
         } catch (error) {
             console.error("errores EN OBTENER masvendido");
         }
@@ -76,7 +78,7 @@ class Inicio extends PureComponent {
                         <div className="card-body pt-0">
                             {
                                 masvendidoAPI.map((prod, k) =>
-                                    <div style={{borderBottom: "1px dashed #a9a9a9"}} key={k}>{`${prod.nomb_comercial_producto} ${prod.nomb_generico_producto} ${prod.concentracion_producto} vendido ${prod.producto}  `}</div>
+                                    <div style={{ borderBottom: "1px dashed #a9a9a9" }} key={k}>{`${prod.nomb_comercial_producto} ${prod.nomb_generico_producto} ${prod.concentracion_producto} vendido ${prod.producto}  `}</div>
                                 )
                             }
                         </div>
@@ -86,81 +88,7 @@ class Inicio extends PureComponent {
 
                 <Row>
                     <Col sm={6}>
-                        <div className="card">
-                            <div className="card-header font-weight-bold">PRODUCTOS PROXIMOS A VENCERSE <div className="badge badge-primary">45</div></div>
-                            <div className="card-body p-1">
-
-                                <div className="table-responsive">
-                                    <table className="table table-sm table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>VENCIMIENTO</th>
-                                                <th>PRODUCTO</th>
-                                                <th>PRESENTACION</th>
-                                                <th>STOCK</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>20/02/2020</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>20/02/2020</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>20/02/2020</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>20/02/2020</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>20/02/2020</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>20/02/2020</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>20/02/2020</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>20/02/2020</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>20/02/2020</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                        <ProductosAlerta />
                     </Col>
 
                     <Col sm={6}>

@@ -86,7 +86,7 @@ class Login extends Component {
 									disabled={!this.state.contrasena.length}> INGRESAR</Button>
 							</div>
 							<div className="mr-auto"><Button type="reset" outline color="warning" size="sm"> CANCELAR</Button></div>
-							<div><Button type="button" outline color="danger" size="sm" onClick={()=>{this.SalirSistema()}}>SALIR </Button></div>
+							<div><Button outline color="danger" size="sm" onClick={()=>{this.SalirSistema()}}>SALIR </Button></div>
 							
 						</div>
 					</Form>

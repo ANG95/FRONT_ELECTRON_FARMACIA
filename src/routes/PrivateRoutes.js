@@ -183,7 +183,7 @@ class PrivateRoutes extends Component {
 				<nav>
 					<TitleBar
 						icon={"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQerURiUv2CaFOHL1U52ToInzSSzCOMsI8YiD_L1XlQKlICJcaT&usqp=CAU"}
-						app="BOTICA VIRGEN DEL ROSARIO"
+						app=".:: BOTICA DEL ROSARIO ::."
 						menu={slackTemplate}
 						theme={{
 							barTheme: 'dark',

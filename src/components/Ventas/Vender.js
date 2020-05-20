@@ -501,7 +501,7 @@ class Vender extends Component {
             "detalles": DataSeleccionados
 
         })
-        console.log("insertaBoleta ", insertaBoleta);
+        // console.log("insertaBoleta ", insertaBoleta);
         if (insertaBoleta.status === 200) {
             toast.success('✔ Venta realizada con éxito', {
                 position: "top-right",
@@ -533,7 +533,7 @@ class Vender extends Component {
                       <meta charset="UTF-8">
                       <meta name="viewport" content="width=device-width, initial-scale=1.0">
                       <script src="./JsBarcode.all.min.js"></script>
-                      <title>Ticket de venta</title>
+                      <title>TICKET DE VENTA N° ${insertaBoleta.data.id_venta}</title>
                     </head>
                     <body>
                     <style type="text/css">

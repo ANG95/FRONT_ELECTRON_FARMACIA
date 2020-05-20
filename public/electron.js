@@ -54,7 +54,8 @@ function createWindow() {
 
 app.on('ready', createWindow);
 app.once('ready-to-show', () => {
-  app.show()
+  app.show();
+  console.log("ready-to-show");
 })
 
 app.on('window-all-closed', () => {
