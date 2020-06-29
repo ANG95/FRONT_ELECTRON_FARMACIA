@@ -12,14 +12,14 @@ function ProductosAlerta() {
 
 
     useEffect(() => {
-        console.log("me estoy ejecutando");
         reqProductos();
     }, [])
 
     const reqProductos = async () => {
         try {
             var row = await Axios.get(`/productos/Lotescategorias`)
-            setDataFiltrado(row.data)
+            let filtrado = row.data.filter(dp => CantDias(dp.fecha_vencimiento_lote) < 90)
+            setDataFiltrado(filtrado)
             setDataProductosAPI(row.data)
             console.log("row productos", row.data);
         } catch (error) {

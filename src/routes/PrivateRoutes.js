@@ -13,8 +13,10 @@ import history from '../util/history';
 import * as Routes from './index';
 import NotFound from '../components/NotFound';
 import Perfil from "../components/Otros/DatosUsuario/Perfil"
+import { remote } from 'electron';
 
 const { shell } = require('electron')
+const currentWindow = remote.getCurrentWindow();
 // const { ipcRenderer, shell } = require('electron')
 
 const { openExternal } = shell;
@@ -182,9 +184,15 @@ class PrivateRoutes extends Component {
 			<Fragment>
 				<nav>
 					<TitleBar
-						icon={"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQerURiUv2CaFOHL1U52ToInzSSzCOMsI8YiD_L1XlQKlICJcaT&usqp=CAU"}
-						app=".:: BOTICA DEL ROSARIO ::."
+						iconSrc={"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQerURiUv2CaFOHL1U52ToInzSSzCOMsI8YiD_L1XlQKlICJcaT&usqp=CAU"}
+						title=".:: BOTICA DEL ROSARIO ::."
 						menu={slackTemplate}
+						currentWindow={currentWindow}
+						onClose={() => currentWindow.close()}
+						onMinimize={() => currentWindow.minimize()}
+						onMaximize={() => currentWindow.maximize()}
+						// when the titlebar is double clicked
+						onDoubleClick={() => currentWindow.maximize()}
 						theme={{
 							barTheme: 'dark',
 							barBackgroundColor: '#007bff',

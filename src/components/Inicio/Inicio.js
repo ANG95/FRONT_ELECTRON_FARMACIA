@@ -62,7 +62,7 @@ class Inicio extends PureComponent {
                     </div>
                     <div className="card text-white bg-success">
                         <div className="card-header">
-                            Total de ventas
+                            Total de ventas S/.
                         </div>
                         <div className="card-body">
                             <h5 className="card-title">
